@@ -15,9 +15,16 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ChatService>();
 builder.Services.AddSignalR();
+builder.Services.AddCors();
 
 var app = builder.Build();
 
+app.UseCors(builder => builder
+    .WithOrigins("http://localhost:4200")
+    .AllowAnyHeader()
+    .AllowAnyMethod()
+    .AllowCredentials()
+);
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

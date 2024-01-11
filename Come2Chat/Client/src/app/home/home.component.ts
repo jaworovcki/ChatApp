@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
             },
             error: (error) => {
                 if (typeof(error.error) == 'object') {
-                    this.apiErrorMessages = error.error;
+                    this.apiErrorMessages.push(...error.error);
                 }
 
             }
