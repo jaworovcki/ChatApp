@@ -32,6 +32,7 @@ export class HomeComponent implements OnInit {
     if (this.userForm.valid) {
         this.chatService.registerUser(this.userForm.value).subscribe({
             next: () => {
+                this.chatService.myName = this.userForm.value.name;
                 this.openChat = true;
                 this.userForm.reset();
                 this.submitted = false;
