@@ -33,6 +33,8 @@ export class HomeComponent implements OnInit {
         this.chatService.registerUser(this.userForm.value).subscribe({
             next: () => {
                 this.openChat = true;
+                this.userForm.reset();
+                this.submitted = false;
             },
             error: (error) => {
                 if (typeof(error.error) !== 'object') {
@@ -42,6 +44,10 @@ export class HomeComponent implements OnInit {
             }
         })
     }
+  }
+
+  closeChat() {
+    this.openChat = false;
   }
 
 }

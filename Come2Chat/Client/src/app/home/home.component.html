@@ -42,5 +42,5 @@
 </ng-container>
 
 <ng-container *ngIf="openChat === true">
-    <app-chat></app-chat>
+    <app-chat (closeChatEmmiter)="closeChat()"></app-chat>
 </ng-container>
