@@ -41,7 +41,6 @@ export class HomeComponent implements OnInit {
                 if (typeof(error.error) !== 'object') {
                     this.apiErrorMessages.push(error.error);
                 }
-
             }
         })
     }

@@ -53,13 +53,13 @@ public class ChatService
 
     public void RemoveUserFormList(string user)
     {
-        lock (Users)
+      lock (Users)
+      {
+        if (Users.ContainsKey(user))
         {
-            if (Users.ContainsKey(user))
-            {
-                Users.Remove(user);
-            }
+            Users.Remove(user);
         }
+      }
     }
 
     public string[] GetOnlineUsers()
