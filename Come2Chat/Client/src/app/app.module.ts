@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { ChatComponent } from './chat/chat.component';
 import { ChatInputComponent } from './chat-input/chat-input.component';
+import { MessagesComponent } from './messages/messages.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ChatInputComponent } from './chat-input/chat-input.component';
     FooterComponent,
     HomeComponent,
     ChatComponent,
-    ChatInputComponent
+    ChatInputComponent,
+    MessagesComponent
   ],
   imports: [
     BrowserModule,

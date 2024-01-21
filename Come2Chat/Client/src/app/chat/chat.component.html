@@ -38,17 +38,7 @@
                 Messages
             </div>
             <div class="card-body" style="min-height: 500px;">
-                <div style="overflow-y: auto; height: 400px;">
-                    <p class="card-text">
-                        <span class="text-primary">User1: </span>
-                        <span class="ml-1">Some messages go here</span>
-                    </p>
-
-                    <p class="card-text">
-                        <span class="text-primary">User2: </span>
-                        <span class="ml-1">Some messages go here</span>
-                    </p>
-                </div>
+                <app-messages [messages]="chatService.messages"></app-messages>
             </div>
             <div class="card-footer">
                 <app-chat-input (contentEmmiter)="sendMessage($event)"></app-chat-input>

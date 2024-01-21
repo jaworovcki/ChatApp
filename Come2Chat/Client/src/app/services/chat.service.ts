@@ -12,6 +12,7 @@ export class ChatService {
   myName: string = '';
   private chatConnection?: HubConnection;
   onlineUsers: string[] = [];
+  messages: Message[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
@@ -33,6 +34,10 @@ export class ChatService {
 
     this.chatConnection.on('OnlineUsers', (onlineUsers) => {
       this.onlineUsers = [...onlineUsers];
+    });
+
+    this.chatConnection.on('NewMessage', (newMessage) => {
+      this.messages = [...this.messages, newMessage];
     });
   }
 
