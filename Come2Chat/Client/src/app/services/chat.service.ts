@@ -8,9 +8,9 @@ import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
   providedIn: 'root'
 })
 export class ChatService {
-    myName: string = '';
-    private chatConnection?: HubConnection;
-    onlineUsers: string[] = [];
+  myName: string = '';
+  private chatConnection?: HubConnection;
+  onlineUsers: string[] = [];
 
   constructor(private httpClient: HttpClient) { }
 
