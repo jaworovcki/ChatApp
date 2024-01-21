@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { User } from '../models/user';
 import { HubConnection, HubConnectionBuilder } from '@microsoft/signalr';
+import { Message } from '../models/message';
 
 @Injectable({
   providedIn: 'root'
@@ -43,4 +44,15 @@ export class ChatService {
     return this.chatConnection?.invoke('AddUserConnectionId', this.myName)
       .catch(error => console.error(error));
   }
+
+  async sendMessage(content: string) {
+    const message : Message = {
+      from: this.myName,
+      content: content
+    };
+
+    return this.chatConnection?.invoke('RecieveMessage', message)
+      .catch(error => console.error(error));
+  }
+  
 }

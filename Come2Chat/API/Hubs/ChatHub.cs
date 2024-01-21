@@ -36,6 +36,11 @@ public class ChatHub : Hub
     await DisplayOnlineUsers();
   }
 
+  public async Task RecieveMessage(MessageDto message)
+  {
+    await Clients.Group("Come2Chat").SendAsync("NewMessage", message);
+  }
+
   private async Task DisplayOnlineUsers()
   {
     var onlineUsers = _chatService.GetOnlineUsers();

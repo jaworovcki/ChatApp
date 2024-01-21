@@ -51,18 +51,7 @@
                 </div>
             </div>
             <div class="card-footer">
-                <form autocomplete="off">
-                    <div class="row">
-                        <div class="col-9">
-                            <input type="text" class="form-control" placeholder="Send message">
-                        </div>
-                        <div class="col-3">
-                            <div class="d-grid">
-                                <button class="btn btn-dark btn-block" type="submit">Send</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
+                <app-chat-input (contentEmmiter)="sendMessage($event)"></app-chat-input>
             </div>
         </div>
     </div>
